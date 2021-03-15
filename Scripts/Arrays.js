@@ -1,0 +1,326 @@
+/*
+	Aaron Shaneen
+	CS 3550 T/TH
+	Assignment #14
+*/
+
+use PurpleBoxDVD
+
+db.movie.insert
+(
+	[
+		{
+			_id:1000,
+			movieID:1000,
+			type:"movie",
+			title:"Watchmen",
+			keywords:
+			[
+				{
+					keyword:"superhero"
+				},
+				{
+					keyword:"doomsday"
+				},
+				{
+					keyword:"dystopia"
+				}
+			],
+			genres:
+			[
+				{
+					genre:"action"
+				},
+				{
+					genre:"drama"
+				},
+				{
+					genre:"sci-fi"
+				}
+			],
+			directors:
+			[
+				{
+					directorFirstName:"Zack",
+					directorLastName:"Snyder"
+				},
+			],
+			actors:
+			[
+				{
+					actorFirstName:"Billy",
+					actorLastName:"Crudup"
+				},
+				{
+					actorFirstName:"Jackie",
+					actorLastName:"Haley"
+				},
+				{
+					actorFirstName:"Jeffrey",
+					actorLastName:"Morgan"
+				}
+			]
+		},
+		{
+			_id:1001,
+			movieID:1001,
+			type:"movie",
+			title:"Inception",
+			keywords:
+			[
+				{
+					keyword:"dream"
+				},
+				{
+					keyword:"subconscious"
+				},
+				{
+					keyword:"deception"
+				}
+			],
+			genres:
+			[
+				{
+					genre:"action"
+				},
+				{
+					genre:"adventure"
+				},
+				{
+					genre:"sci-fi"
+				}
+			],
+			directors:
+			[
+				{
+					directorFirstName:"Christopher",
+					directorLastName:"Nolan"
+				},
+			],
+			actors:
+			[
+				{
+					actorFirstName:"Leonardo",
+					actorLastName:"Dicaprio"
+				},
+				{
+					actorFirstName:"Tom",
+					actorLastName:"Hardy"
+				},
+				{
+					actorFirstName:"Marion",
+					actorLastName:"Cotillard"
+				}
+			]
+		},
+		{
+			_id:1003,
+			movieID:1003,
+			type:"movie",
+			title:"The Fountain",
+			keywords:
+			[
+				{
+					keyword:"tree"
+				},
+				{
+					keyword:"eternity"
+				},
+				{
+					keyword:"love"
+				}
+			],
+			genres:
+			[
+				{
+					genre:"drama"
+				},
+				{
+					genre:"romance"
+				},
+				{
+					genre:"sci-fi"
+				}
+			],
+			directors:
+			[
+				{
+					directorFirstName:"Darren",
+					directorLastName:"Aronofsky"
+				},
+			],
+			actors:
+			[
+				{
+					actorFirstName:"Hugh",
+					actorLastName:"Jackman"
+				},
+				{
+					actorFirstName:"Rachel",
+					actorLastName:"Weisz"
+				},
+				{
+					actorFirstName:"Ellen",
+					actorLastName:"Burstyn"
+				}
+			]
+		}
+	]
+)
+
+db.movieItem.insert
+(
+	[
+		{
+			_id:2000,
+			movieItemID:2000,
+			type:"movieItem",
+			movieID:1000,
+			title:"Watchmen",
+			copyNum:1,
+			copyFormat:"dvd"
+		},
+		{
+			_id:2001,
+			movieItemID:2001,
+			type:"movieItem",
+			movieID:1001,
+			title:"Inception",
+			copyNum:2,
+			copyFormat:"blu"
+		},
+		{
+			_id:2002,
+			movieItemID:2002,
+			type:"movieItem",
+			movieID:1002,
+			title:"The Fountain",
+			copyNum:3,
+			copyFormat:"dvd"
+		}
+	]
+)
+
+db.user.insert
+(
+	[
+		{
+			_id:3000,
+			userID:3000,
+			type:"user",
+			userType:"c",
+			customerType:"n",
+			password:"abc123",
+			secQ:
+			[
+				{
+					question:"What is your favorite color?"
+				},
+				{
+					question:"What is your favorite shape?"
+				}
+			],
+			secA:
+			[
+				{
+					answer:"red"
+				},
+				{
+					answer:"circle"
+				}
+			],
+			phoneNum:
+			[
+				{
+					phone:"1234567890"
+				},
+				{
+					phone:"1234567890"
+				}
+			],
+			custBanStatus:false,
+			overdueFees:0,
+			rentalQuota:2
+		},
+		{
+			_id:3001,
+			userID:3001,
+			type:"user",
+			userType:"c",
+			customerType:"p",
+			password:"def4321",
+			secQ:
+			[
+				{
+					question:"What is your favorite color?"
+				},
+				{
+					question:"What is your favorite shape?"
+				}
+			],
+			secA:
+			[
+				{
+					answer:"blue"
+				},
+				{
+					answer:"square"
+				}
+			],
+			phoneNum:
+			[
+				{
+					phone:"1234567890"
+				},
+				{
+					phone:"1234567890"
+				}
+			],
+			custBanStatus:false,
+			overdueFees:0,
+			rentalQuota:4
+		}
+	]
+)
+
+db.rental.insert
+(
+	[
+		{
+			_id:4000,
+			rentalID:4000,
+			userID:3000,
+			movieItemID:2000,
+			rentalDate:new Date("2017-04-17"),
+			returnDate:new Date("2017-04-22")
+		},
+		{
+			_id:4001,
+			rentalID:4001,
+			userID:3001,
+			movieItemID:2001,
+			rentalDate:new Date("2017-04-17"),
+			returnDate:new Date("2017-04-22")
+		},
+		{
+			_id:4002,
+			rentalID:4002,
+			userID:3002,
+			movieItemID:2002,
+			rentalDate:new Date("2017-04-17"),
+			returnDate:new Date("2017-04-22")
+		}
+	]
+)
+
+db.rental.find({})
+
+db.movieItem.find({},{movieID:1,title:"A",copyNum:1,copyFormat:1,_id:0})
+
+db.rental.find({},{userID:1,movieItemID:1,rentalDate:1,returnDate:1,_id:0})
+
+db.rental.updateOne({_id:4000},{$set:{returnDate:new Date("2017-04-23")}})
+
+db.rental.find({})
+
+db.movieItem.deleteOne({_id:2000})

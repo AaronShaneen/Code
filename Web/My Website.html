@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>My Website</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--embedding augmented-ui library-->
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">
+
+		<style>
+			html, body {
+				 font-family: Lucida Console,Lucida Sans Typewriter;
+				 color: white;
+			}
+
+			div.demo {
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+            height: 100px;
+			/*margin: 10px;
+			padding: 10px;*/
+            text-align: center;
+            --aug-border: 5px;
+            --aug-inset: 5px;
+            --aug-border-bg: black;
+			--aug-inset-bg: black;
+			background-image: url('RetrowaveSunset.jpg');
+          	}
+		</style>
+	</head>
+	<body>
+		<div class="demo" augmented-ui="tl-clip br-clip exe">
+				<h1>My F1r5t W3bs1t3</h1>
+		</div>
+	</body>
+</html>
