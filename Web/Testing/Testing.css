@@ -1,0 +1,14 @@
+header {
+    width:100%;
+    height: 100px;
+    background-image: url("DarkWave.jpg");
+}
+
+h1 {
+    color: blanchedalmond;
+    text-align: center;
+}
+
+header.h1 {
+    vertical-align: middle;
+}

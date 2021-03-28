@@ -1,0 +1,13 @@
+html {
+    background-color: green;
+}
+
+.demo {
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    --aug-border: 5px;
+    --aug-inset: 5px;
+    --aug-border-bg: chocolate;
+    --aug-inset-bg: chocolate;
+}
