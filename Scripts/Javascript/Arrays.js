@@ -1,7 +1,5 @@
 /*
 	Aaron Shaneen
-	CS 3550 T/TH
-	Assignment #14
 */
 
 use PurpleBoxDVD
