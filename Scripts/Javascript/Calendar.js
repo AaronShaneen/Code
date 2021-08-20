@@ -1,7 +1,4 @@
-/*
-	Aaron Shaneen
-	JS Calendar Array
-*/
+// JS Calendar Array
 
 function calendar(calendarDay)
 {
