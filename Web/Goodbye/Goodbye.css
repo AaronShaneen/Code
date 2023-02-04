@@ -1,0 +1,21 @@
+html {
+    background-color: black;
+}
+
+h1 {
+    color: black;
+    font-family: monospace, 'Lucida Console', 'Monaco';
+}
+
+.box_me {
+    display: inline-block;
+    width: 97%;
+    height: 100px;
+    margin: 10px;
+    --aug-border: 5px;
+    --aug-inset: 5px;
+    padding: 10px;
+    text-align: center;
+    --aug-border-bg: gold;
+    --aug-inset-bg: gold;
+}

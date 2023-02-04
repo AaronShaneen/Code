@@ -1,0 +1,1 @@
+db.getCollection('subcategories').aggregate([{$group:{_id:{CatID:"$catID",catName:"$catName"},count:{$sum:1}}},{$sort:{"_id":1}}])
